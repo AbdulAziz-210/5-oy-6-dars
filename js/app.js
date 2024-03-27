@@ -5,20 +5,101 @@ class Cars {
     price;
     date_of_manufacture;
     color;
-
-    constructor(models,  date_of, price_of_cars, colors) {
-        this.model = models,
-        this.price = price_of_cars,
-        this.date_of_manufacture = date_of,
-        this.color = colors
+    
+    constructor(options) {
+        this.model = options.models,
+        this.price = options.price_of_cars,
+        this.date_of_manufacture = options.date_of,
+        this.color = options.colors
     }
 }
 
-const Toyota = new Cars ("TOYOTA Highlander", 2023, "73300$", "White") ;
-const Mercedes = new Cars ("Mercedes-Benz W210", 2000, "18.000$", "silver color") ;
-const BMW = new Cars ("BMW E39", 2004, "19.000$", "black") ;
-const Lexus = new Cars ("Lexus IS 300", 2007, "20.000$", "black") ;
-const KIA = new Cars ("KIA Sorento", 2024, "50.200$", "whita") ;
+class SUV extends Cars {
+    constructor(options) {
+        super(options)
+        this.airbag = options.airbag
+    }
+
+} 
+
+class Sedan extends Cars {
+    constructor(options) {
+        super(options)
+        this.ABS = options.ABS
+    }
+
+} 
+
+class Hatchback extends Cars {
+    constructor(options) {
+        super(options)
+        this.Led = options.Led
+    }
+
+} 
+
+class Sedan2 extends Cars {
+    constructor(options) {
+        super(options)
+        this.N2O = options.N2O  // N2 O Azot oksidi (Nitro)
+    }
+
+} 
+
+class Crossover extends Cars {
+    constructor(options) {
+        super(options)
+        this.spare_tire = options.spare_tire
+    }
+
+} 
+
+
+
+
+const Toyota = new SUV ({
+    models: "Toyota Highlander",
+    price_of_cars: "73300$",
+    date_of: 2023,
+    colors: "White",
+    airbag: true
+}) ;
+
+
+const Mercedes = new Sedan ({
+    models: "Mercedes-Benz W210",
+    price_of_cars: "18.000$",
+    date_of: 2000,
+    colors: "silver color",
+    ABS: true
+}) ;
+
+
+const BMW = new Hatchback ({
+    models: "BMW E39",
+    price_of_cars: "19.000$",
+    date_of: 2004, 
+    colors: "black",
+    Led: true
+
+}) ;
+
+
+const Lexus = new Sedan2 ({
+    models: "Lexus IS 300",
+    price_of_cars: "20.000$",
+    date_of: 2007, 
+    colors: "black",
+    N2O: false
+}) ;
+
+const KIA = new Crossover ({
+    models: "KIA Sorento",
+    price_of_cars: "50.200$",
+    date_of: 2024,
+    colors: "whita",
+    spare_tire: false
+}) ;
 
 
 console.log(Toyota);
@@ -26,3 +107,50 @@ console.log(Mercedes);
 console.log(BMW);
 console.log(Lexus);
 console.log(KIA);
+
+
+
+
+
+
+
+// const Toyota = new Cars ({
+//     models: "Toyota Highlander",
+//     price_of_cars: "73300$",
+//     date_of: 2023,
+//     colors: "White"
+    
+// }) ;
+
+// const Mercedes = new Cars ({
+//     models: "Mercedes-Benz W210",
+//     price_of_cars: "18.000$",
+//     date_of: 2000,
+//     colors: "silver color"
+// }) ;
+
+
+
+// const BMW = new Cars ({
+//     models: "BMW E39",
+//     price_of_cars: "19.000$",
+//     date_of: 2004, 
+//     colors: "black"
+
+// }) ;
+
+// const Lexus = new Cars ({
+//     models: "Lexus IS 300",
+//     price_of_cars: "20.000$",
+//     date_of: 2007, 
+//     colors: "black"
+// }) ;
+
+// const KIA = new Cars ({
+//     models: "KIA Sorento",
+//     price_of_cars: "50.200$",
+//     date_of: 2024,
+//     colors: "whita"
+// }) ;
+
+
